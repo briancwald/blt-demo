@@ -9,7 +9,9 @@ project:
     hostname: 'local.${project.machine_name}.com'
 git:
   default_branch: master
-  remotes: {  }
+  remotes:
+    cloud: 'cddemo6@svn-23659.prod.hosting.acquia.com:cddemo6.git'
+    github: 'git@github.com:briancwald/blt-demo.git'
 drush:
   aliases:
     remote: '${project.machine_name}.test'
