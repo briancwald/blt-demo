@@ -1,7 +1,7 @@
 project:
   machine_name: cddemo6
-  prefix: BLT
-  human_name: 'BLTed 8'
+  prefix: MARVEL
+  human_name: 'MARVEL - Demo'
   profile:
     name: lightning
   local:
