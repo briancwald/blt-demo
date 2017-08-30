@@ -1,4 +1,4 @@
-uuid: b639feb9-77ad-4b0d-ae48-05b4394c1838
+uuid: 8c54d2d4-3886-4b56-b6ea-e937c4974bdd
 langcode: en
 status: true
 dependencies:
@@ -41,5 +41,4 @@ content:
     weight: -20
     region: content
 hidden:
-  panelizer: true
   scheduled_update: true

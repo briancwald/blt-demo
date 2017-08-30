@@ -18,7 +18,6 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
-import: '${repo.root}/blt/build.xml'
 modules:
   local:
     enable: [dblog, devel, seckit, views_ui]

@@ -1,4 +1,4 @@
-uuid: 8f25fef5-d63f-4d15-b89f-49f63a1e1ef8
+uuid: 92728b14-1f0a-403d-936a-6b967cf87bd5
 langcode: en
 status: true
 dependencies:
@@ -30,7 +30,4 @@ content:
   workbench_moderation_control:
     weight: -20
     region: content
-hidden:
-  field_meta_tags: true
-  panelizer: true
-  scheduled_update: true
+hidden: {  }
