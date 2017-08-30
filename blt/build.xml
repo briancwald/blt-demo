@@ -1,0 +1,89 @@
+<project name="custom" default="build">
+
+    <!-- Override setup:update task for config import. -->
+    <target name="setup:update" description="Update current database to reflect the state of the Drupal file system.">
+
+        <!-- enable_property and uninstall_property must be set at this time. -->
+        <phingcall target="setup:toggle-modules"/>
+
+        <!-- Execute db updates. -->
+        <drush command="updb" assume="yes" alias="${drush.alias}">
+            <option name="entity-updates"></option>
+        </drush>
+
+        <!-- Addition: Import config split. -->
+        <drush command="cache-clear" assume="yes" alias="${drush.alias}">
+            <param>drush</param>
+        </drush>
+        <if>
+            <contains string="${environment}" substring="ode" />
+            <then>
+                <!-- CDEs don't have the config splits defined bc their db is new. -->
+                <drush command="config-import" assume="yes" alias="${drush.alias}">
+                    <option name="source">../config/default</option>
+                </drush>
+            </then>
+            <else>
+                <drush command="config-split-import" assume="yes" alias="${drush.alias}">
+                    <param>${environment}</param>
+                </drush>
+            </else>
+        </if>
+
+        <!-- Rebuild caches. -->
+        <drush command="cr" alias="${drush.alias}"/>
+    </target>
+
+    <!-- Override setup:drupal:install for CI installation with 'config-dir'. -->
+    <target name="setup:drupal:install"
+            description="Installs a specific Drupal site."
+            depends="setup:drupal:settings, setup:drush:settings, setup:hash-salt">
+
+        <if>
+            <istrue value="${drush.verbose}"/>
+            <then>
+                <echo level="verbose">Printing drush status...</echo>
+                <drush command="status"/>
+            </then>
+        </if>
+
+        <echo>Installing Drupal...</echo>
+        <drush command="site-install">
+            <option name="site-name">"${project.human_name}"</option>
+            <option name="site-mail">"${drupal.account.mail}"</option>
+            <option name="account-name">"${drupal.account.name}"</option>
+            <option name="account-pass">"${drupal.account.password}"</option>
+            <option name="account-mail">"${drupal.account.mail}"</option>
+            <!-- Addition: Add config-dir option so Drush overwrites config. -->
+            <option name="config-dir">../config/default</option>
+            <param>"${project.profile.name}"</param>
+            <param>"install_configure_form.update_status_module='array(FALSE,FALSE)'"</param>
+        </drush>
+
+        <phingcall target="setup:update"/>
+
+        <!-- Set sites directory file permissions. -->
+        <echo level="verbose">Making ${docroot}/sites/default writable...</echo>
+        <chmod mode="0755" failonerror="false">
+            <fileset dir="${docroot}/sites/default">
+                <type type="dir" />
+                <exclude name="files/**" />
+            </fileset>
+        </chmod>
+        <chmod mode="0644" failonerror="false">
+            <fileset dir="${docroot}/sites/default">
+                <type type="file" />
+                <exclude name="files/**" />
+            </fileset>
+        </chmod>
+
+    </target>
+
+    <property name="host" value="127.0.0.1:8080" />
+    <target name="behat-generate" description="Generates behat config based on environment.">
+        <exec command="./vendor/bin/drupal behat:init http://${host} --merge=../docroot/profiles/contrib/lightning/tests/behat.yml" dir="${docroot}/../" passthru="true" />
+        <exec command="./vendor/bin/drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context" dir="${docroot}/../" passthru="true" />
+        <exec command="./vendor/bin/drupal behat:include ../tests/behat/features" dir="${docroot}/../" passthru="true" />
+    </target>
+
+</project>
