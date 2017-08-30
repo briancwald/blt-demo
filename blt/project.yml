@@ -37,3 +37,4 @@ modules:
     uninstall: [devel, views_ui]
 cm:
   strategy: config-split
+  allow-overrides: true
