@@ -91,4 +91,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  panelizer: true
