@@ -33,7 +33,6 @@ module:
   inline_entity_form: 0
   jsonapi: 0
   layout_discovery: 0
-  lightning_api: 0
   lightning_contact_form: 0
   lightning_core: 0
   lightning_landing_page: 0
@@ -77,8 +76,6 @@ module:
   seckit: 0
   serialization: 0
   shortcut: 0
-  simple_oauth: 0
-  simple_oauth_extras: 0
   system: 0
   taxonomy: 0
   text: 0

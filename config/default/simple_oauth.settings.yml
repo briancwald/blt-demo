@@ -1,6 +1,0 @@
-access_token_expiration: 300
-refresh_token_expiration: 1209600
-_core:
-  default_config_hash: YJrGmZVEcxxUt1ffTwS_DybfKrbnRkwF1GXzPj-j7aE
-private_key: /tmp/97066ecd17d3c6eb4777055d777f6f88ea18cdfe6afd3a340215a48b4368a580.key
-public_key: /tmp/57f81abdd8afac7ee7366324c6c0fabfcad7d70342266797b3edbd287f270622.key
