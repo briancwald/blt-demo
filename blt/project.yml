@@ -18,6 +18,7 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
+import: '${repo.root}/blt/build.xml'
 modules:
   local:
     enable: [dblog, devel, seckit, views_ui]
@@ -35,4 +36,4 @@ modules:
     enable: [acquia_connector, shield]
     uninstall: [devel, views_ui]
 cm:
-  allow-overrides: true
+  strategy: config-split
