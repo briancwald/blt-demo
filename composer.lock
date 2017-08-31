@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "18d8453fcff3b10b6e6b70d39cf4d435",
+    "content-hash": "51702d5abf1575edb688349e73b48606",
     "packages": [
         {
             "name": "acquia/blt",
@@ -336,6 +336,63 @@
                 "twig"
             ],
             "time": "2016-07-25T21:02:13+00:00"
+        },
+        {
+            "name": "brightcove/api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightcove/PHP-API-Wrapper.git",
+                "reference": "6ba5c674b07c5dc39d8327d8158f55c1fd1da78c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightcove/PHP-API-Wrapper/zipball/6ba5c674b07c5dc39d8327d8158f55c1fd1da78c",
+                "reference": "6ba5c674b07c5dc39d8327d8158f55c1fd1da78c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Brightcove\\": "lib/Brightcove/",
+                    "Brightcove\\Test\\": "test/Brightcove/Test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tamás Demeter-Haludka",
+                    "homepage": "https://github.com/tamasd"
+                },
+                {
+                    "name": "KonczGabor",
+                    "homepage": "https://github.com/KonczGabor"
+                },
+                {
+                    "name": "janmashat",
+                    "homepage": "https://github.com/janmashat"
+                }
+            ],
+            "description": "Brightcove PHP API Wrapper",
+            "keywords": [
+                "Brightcove",
+                "api"
+            ],
+            "time": "2017-03-20T12:15:59+00:00"
         },
         {
             "name": "caxy/php-htmldiff",
@@ -1787,6 +1844,84 @@
                 "source": "http://cgit.drupalcode.org/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
             }
+        },
+        {
+            "name": "drupal/brightcove",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/brightcove",
+                "reference": "d1631f940835cdab0ddcc9b9f2d001385cc9a90c"
+            },
+            "require": {
+                "brightcove/api": "dev-master",
+                "drupal/core": "*",
+                "drupal/inline_entity_form": "*",
+                "drupal/time_formatter": "*",
+                "drupal/token": "*"
+            },
+            "require-dev": {
+                "drupal/media_entity": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2+10-dev",
+                    "datestamp": "1496058484",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "László CSÉCSY",
+                    "homepage": "https://github.com/boobaa"
+                },
+                {
+                    "name": "Tamás NAGY",
+                    "homepage": "https://github.com/ycecube"
+                },
+                {
+                    "name": "balian0303",
+                    "homepage": "https://www.drupal.org/user/3141563"
+                },
+                {
+                    "name": "mikeharty",
+                    "homepage": "https://www.drupal.org/user/315991"
+                },
+                {
+                    "name": "tamasd",
+                    "homepage": "https://www.drupal.org/user/372872"
+                },
+                {
+                    "name": "wiifm",
+                    "homepage": "https://www.drupal.org/user/358731"
+                },
+                {
+                    "name": "yce",
+                    "homepage": "https://www.drupal.org/user/2252152"
+                }
+            ],
+            "description": "Brightcove Video Connect",
+            "homepage": "https://www.drupal.org/project/brightcove",
+            "keywords": [
+                "Brightcove",
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/brightcove",
+                "issues": "http://drupal.org/project/issues/brightcove"
+            },
+            "time": "2017-05-29T11:48:55+00:00"
         },
         {
             "name": "drupal/coder",
@@ -4506,7 +4641,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/security_review"
             },
-            "time": "2016-10-20 15:43:48"
+            "time": "2016-10-20T15:43:48+00:00"
         },
         {
             "name": "drupal/shield",
@@ -4630,6 +4765,68 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/simple_oauth"
             }
+        },
+        {
+            "name": "drupal/time_formatter",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/time_formatter",
+                "reference": "57150a6244c9f231d871a8256470fce6ec877cbf"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1456256339",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Boobaa",
+                    "homepage": "https://www.drupal.org/user/199303"
+                },
+                {
+                    "name": "akosh",
+                    "homepage": "https://www.drupal.org/user/698510"
+                },
+                {
+                    "name": "jan.mashat",
+                    "homepage": "https://www.drupal.org/user/3198923"
+                },
+                {
+                    "name": "tamasd",
+                    "homepage": "https://www.drupal.org/user/372872"
+                },
+                {
+                    "name": "yce",
+                    "homepage": "https://www.drupal.org/user/2252152"
+                }
+            ],
+            "description": "Field formatter for integer fields storing time in seconds/milliseconds displaying it in various formats.",
+            "homepage": "https://www.drupal.org/project/time_formatter",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/time_formatter",
+                "issues": "http://drupal.org/project/issues/time_formatter"
+            },
+            "time": "2016-02-23T19:31:18+00:00"
         },
         {
             "name": "drupal/token",
@@ -10714,7 +10911,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/brightcove": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
