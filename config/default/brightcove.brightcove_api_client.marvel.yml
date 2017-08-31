@@ -1,0 +1,11 @@
+uuid: f25f0ccb-cfdc-40ea-9897-e1a2dd53f3ca
+langcode: en
+status: true
+dependencies: {  }
+id: marvel
+label: marvel
+account_id: '5359769168001'
+client_id: 638366d2-db81-47a5-b468-96239de4ef52
+default_player: default
+secret_key: 3UZVPGC0m315H1EiBAVh-BgVMpfAl9EOP6wYg8G71XBgytq2WXzx7i9E_PDZYZjrrIjxJvhO6Nc35XaTcKHZ9A
+max_custom_fields: 10

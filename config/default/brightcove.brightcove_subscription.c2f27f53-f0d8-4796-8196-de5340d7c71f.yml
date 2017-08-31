@@ -1,0 +1,11 @@
+uuid: 4e5e19cc-fb0a-42e3-81bf-652371f062ff
+langcode: en
+status: true
+dependencies: {  }
+id: c2f27f53-f0d8-4796-8196-de5340d7c71f
+label: null
+default: null
+api_client_id: marvel
+endpoint: 'https://drupal.marvel.com/brightcove/notification-callback'
+events:
+  - video-change

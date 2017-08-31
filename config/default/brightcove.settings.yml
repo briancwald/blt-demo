@@ -1,0 +1,5 @@
+defaultAPIClient: marvel
+notification:
+  callbackExpirationTime: 86400
+_core:
+  default_config_hash: DSzbjZHVxz4gTFg0eUgwVoFuhgHc_yOnn9Sk9_cWj48
