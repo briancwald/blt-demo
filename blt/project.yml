@@ -3,7 +3,7 @@ project:
   prefix: MARVEL
   human_name: 'MARVEL - Demo'
   profile:
-    name: lightning
+    name: marvel
   local:
     protocol: http
     hostname: 'local.${project.machine_name}.com'
